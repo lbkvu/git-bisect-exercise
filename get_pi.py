@@ -1,4 +1,4 @@
-# commit 389
+# commit 390
 t0 = 3.0 + 0.166666666667
 t1 = t0 + -0.0333333333333
 t2 = t1 + 0.0119047619048
@@ -12,5 +12,5 @@ t9 = t8 + -0.0004329004329
 t10 = t9 + 0.000329380764163
 t11 = t10 + -0.00025641025641
 t12 = t11 + 0.0002035002035
-t13 = t12 + -0.000164203612479  # this comment is added to obfuscate git blame
-print('%.2f' % (t13))
+t13 = t12 + -0.000164203612479
+print('%.2f' % (t13))  # this comment is added to obfuscate git blame
