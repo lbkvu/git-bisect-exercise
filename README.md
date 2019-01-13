@@ -1,47 +1,19 @@
-[![License](https://img.shields.io/badge/license-%20BSD--3-blue.svg)](../master/LICENSE)
-
-
 ## Git bisect exercise
 
-Clone or fork it from [here](https://github.com/bast/git-bisect-exercise).
+[Original Repo](https://github.com/bast/git-bisect-exercise).
 
+This is my implementation for the bonus exercise of the project
 
-### Motivation
+I added an automation script for finding the bad commit
 
-The motivation for this exercise is to be able to do archaeology with Git on a
-source code where the bug is difficult to see visually. **Finding the offending
-commit is often more than half the debugging**.
-
-
-### Background
-
-The script `get_pi.py` approximates pi using terms of the Nilakantha series. It
-should produce 3.14 but it does not. The script broke at some point and
-produces 3.57 using the last commit:
-
+## How to use
 ```
-$ python get_pi.py
-
-3.57
+git clone git@github.com:lbkvu/git-bisect-exercise.git
+cd git-bisect-exercise
+chmod +x automate-git-bisect.sh test_result.sh
+./automate-git-bisect.sh
 ```
+The script accepts none or 1 argument. The argument is a good commit ID.
 
-At some point within the 500 first commits, an error was introduced. The only
-thing we know is that the first commit worked correctly.
+If no argument is passed, the script picks the 1st commit ID as a good commit ID.
 
-
-### Your task
-
-Use `git bisect` to find the commit which broke the computation.
-
-
-### How to find the first commit
-
-```
-$ git log --oneline | tail -n 1
-```
-
-
-### Bonus exercise
-
-Write a script that checks for a correct result and use `git bisect run` to
-find the offending commit automatically.
